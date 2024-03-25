@@ -32,7 +32,6 @@ let score = document.querySelector('.score');
 // }
 
 // checkBtn.addEventListener('click',gamer)
-
 function gamer(e) {
     e.preventDefault();
     let body = document.body.style;
@@ -57,7 +56,12 @@ function gamer(e) {
       score.textContent--;
       body.backgroundColor = "yellow";
     }
-  }
+if(score.textContent <1){
+    checkBtn.setAttribute('disabled', 'disabled')
+    message.textContent = 'game over, restart game'
+}
+
+}
   checkBtn.addEventListener("click", gamer);
   
   function restartGame() {
@@ -65,3 +69,4 @@ function gamer(e) {
   }
   
   againBtn.addEventListener("click", restartGame);
+
